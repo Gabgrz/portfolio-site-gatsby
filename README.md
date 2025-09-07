@@ -1,53 +1,82 @@
-# Gatsby Portfolio Website
+# Gatsby Creative Portfolio
 
-This repo contains a static website written with [GatsbyJS](https://www.gatsbyjs.org/), integrated with content coming from [DatoCMS](https://www.datocms.com).
+[![Gatsby](https://img.shields.io/badge/Gatsby-663399?style=for-the-badge&logo=gatsby&logoColor=white)](https://www.gatsbyjs.org/)
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![DatoCMS](https://img.shields.io/badge/DatoCMS-FF7751?style=for-the-badge&logo=datocms&logoColor=white)](https://www.datocms.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-![Preview](preview.png)
+A modern portfolio website built with Gatsby and DatoCMS. Features responsive design, image optimization, and content management.
 
-[See the live demo](https://cranky-edison-12166d.netlify.com/)
+**[Live Demo](https://cranky-edison-12166d.netlify.com/)** | **[Documentation](https://www.datocms.com/docs/static-generators/gatsbyjs)**
 
-If you want to use try this out yourself, you first need to set up a project on DatoCMS which will host your data.
+## Features
 
-You can [sign up for a free account](https://dashboard.datocms.com/signup) and then you can simply click this button:
+- Responsive design with smooth animations
+- Static site generation for optimal performance
+- SEO optimized with React Helmet
+- Image optimization and lazy loading
+- Content management through DatoCMS
+- Interactive components (masonry layouts, carousels)
+- Sass styling with modular architecture
 
-[![Deploy with DatoCMS](https://dashboard.datocms.com/deploy/button.svg)](https://dashboard.datocms.com/projects/new-from-template/static-website/gatsby-portfolio)
+## Tech Stack
 
-## Repo usage
+- **Gatsby** - Static site generator
+- **React** - UI library
+- **DatoCMS** - Headless CMS
+- **Sass** - CSS preprocessor
+- **React Slick** - Carousel component
+- **React Masonry** - Masonry layout
 
-First, install the dependencies of this project:
+## Quick Start
 
-```
+### Prerequisites
+- Node.js (v14+)
+- Yarn
+- DatoCMS account ([sign up](https://dashboard.datocms.com/signup))
+
+### Setup
+
+1. **Clone and install:**
+```bash
+git clone https://github.com/your-username/gatsby-portfolio.git
+cd gatsby-portfolio
 yarn install
 ```
 
-Add an `.env` file containing the read-only API token of your DatoCMS site:
-
+2. **Set up DatoCMS:**
+   - [Deploy with DatoCMS](https://dashboard.datocms.com/projects/new-from-template/static-website/gatsby-portfolio) (recommended)
+   - Or manually: Create project → Copy API token → Add to `.env`:
+```bash
+echo 'DATO_API_TOKEN=your_token_here' >> .env
 ```
-echo 'DATO_API_TOKEN=abc123' >> .env
-```
 
-Then, to run this website in development mode (with live-reload):
-
-```
+3. **Start development:**
+```bash
 yarn develop
 ```
 
-To build the final, production ready static website:
+## Scripts
+
+```bash
+yarn develop    # Start development server
+yarn build      # Build for production
+yarn format     # Format code with Prettier
+```
+
+## Project Structure
 
 ```
-yarn build
+src/
+├── components/     # React components
+├── pages/         # Gatsby pages (auto-routed)
+├── styles/        # Sass stylesheets
+└── templates/     # Page templates
 ```
 
-The final result will be saved in the `public` directory.
+## Deployment
 
-## About
-
-The goal of this project is to show how easily you can create static sites using the content (text, images, links, etc.) stored on [DatoCMS](https://www.datocms.com). This project is configured to fetch data from a specific administrative area using [the API DatoCMS provides](https://www.datocms.com/docs/content-management-api).
-
-You can find further information about how to integrate DatoCMS with Gatsby in [our documentation](https://www.datocms.com/docs/static-generators/gatsbyjs).
-
-This websites uses:
-
-* [Yarn](https://yarnpkg.com/) as package manager;
-* [GatsbyJS](https://github.com/gatsbyjs/gatsby) as website generator;
-* [gatsby-source-datocms](https://github.com/datocms/gatsby-source-datocms) to integrate the website with DatoCMS.
+Deploy to any static hosting service:
+- **Netlify** - Connect GitHub repo
+- **Vercel** - Zero-config deployment
+- **GitHub Pages** - Use GitHub Actions
